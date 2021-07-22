@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Kliento įvedimas</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<script>
+		
+			 if ( window.history.replaceState ) {  							//perkrovus puslapį išmeta išsaugotą vedimo info 
+				
+				window.history.replaceState( null, null, window.location.href ); 
+			}  
+	</script>		
+</head>
+
+<body>
+	<h1>Kliento įvedimas</h1>
+	
+	<form action="" method="POST">
+		<div style="border: 3px solid black;display: inline-block; background-color:lightpink; padding: 10px">
+			
+			<b> Kliento kategorija :</b><br>
+			
+					<select name="kategorija" id="id_rajono" >
+						
+							<option value="juridinis">Juridinis</option>
+							<option value="privatus">Privatus</option>
+					
+					</select><br>
+			
+			<br><b>Vardas/Pavadinimas:</b> <br>
+				<input type="text" id="pavadinimas" name="pavadinimas" value="Vardenis Pavardenis">
+			
+			<br><br><b>Kontaktai:</b><br>
+				 <input type="text" id="kontaktai" name="kontaktai" value="Tel. nr. 861234567">
+				 <br>
+	
+			
+		  </div>	
+		  
+		  <br><b><input type="submit" name="siusti" id="patvirtinti" class="patvirtinimo" value="Patvirtinti" style="height:50px; width:450px;font-size:25px" ></b><br>
+	</form>
+</body>
+</html> 

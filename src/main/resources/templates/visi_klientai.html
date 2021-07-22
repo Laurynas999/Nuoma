@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Visi klientai</title>
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		
+			 if ( window.history.replaceState ) {  							//perkrovus puslapį išmeta išsaugotą vedimo info 
+				
+				window.history.replaceState( null, null, window.location.href ); 
+			}  
+	</script>		
+</head>
+
+<body>
+	<h1>Visi klientai</h1>
+	<table cellspacing="3" border="1">
+		<tr>
+			<th>ID</th>
+			<th>Kategorija</th>
+			<th>Vardas/Pavadinimas</th>
+			<th>Kontaktai</th>
+			<th>Užsakyti</th>
+		</tr>
+		<tr th:each="rezult:${visu_klientu_info}"> 
+			<td th:text="${rezult.getId}"></td>
+			<td th:text="${rezult.getKategorija}"></td>
+			<td th:text="${rezult.getPavadinimas}"></td>
+			<td th:text="${rezult.getKontaktai}"></td>
+			<td><button class="uzsakyti ui-button ui-corner-all ui-widget" th:data-id="${rezult.getId()}">Uzakyti</button></td>
+		</tr>
+
+	</table>
+
+</body>
+</html> 
